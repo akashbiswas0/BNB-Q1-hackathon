@@ -2,12 +2,14 @@
 
 ## Getting Started
 
-demo : 
+this project is on opBNBTestnet make sure you have that network added
+
+demo : https://youtu.be/ymHxRvn6r40
 
 To run on local:
 
-clone this repo
-change directory
+git clone https://github.com/priyanshur66/greenwim
+cd greenwim
 
 ```bash
 npm run dev
