@@ -30,8 +30,6 @@ import {
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiProvider } from "wagmi";
 
-
-
 const { wallets } = getDefaultWallets();
 
 const config = getDefaultConfig({
@@ -45,7 +43,7 @@ const config = getDefaultConfig({
     },
   ],
   chains: [
-    bscTestnet,opBNBTestnet,
+    opBNBTestnet,
     ...(process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" ? [sepolia] : []),
   ],
   ssr: true,
@@ -57,11 +55,11 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider modalSize="compact"
-          theme={darkTheme({...darkTheme.accentColors.orange,})} >
-        
-            {children}
-          
+        <RainbowKitProvider
+          modalSize="compact"
+          theme={darkTheme({ ...darkTheme.accentColors.orange })}
+        >
+          {children}
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
